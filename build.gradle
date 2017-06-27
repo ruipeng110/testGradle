@@ -1,0 +1,31 @@
+group 'priv.crp'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.7
+
+task "init-dir" << {
+    sourceSets*.java.srcDirs*.each {
+        it.mkdirs()
+    }
+    sourceSets*.resources.srcDirs*.each{
+        it.mkdirs()
+    }
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url "http://jn.ichezheng.com/nexus/content/groups/public"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.fasterxml.jackson.core:jackson-core:2.1.4"
+    compile "com.fasterxml.jackson.core:jackson-databind:2.1.4"
+    compile "net.sf.json-lib:json-lib:jdk15:2.4"
+}
