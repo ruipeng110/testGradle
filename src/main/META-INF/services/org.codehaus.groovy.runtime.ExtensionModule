@@ -1,0 +1,4 @@
+moduleName=spring-util
+moduleVersion=2.4.11
+extensionClasses=priv.crp.util.SpringUtilMethods
+staticExtensionClasses=
