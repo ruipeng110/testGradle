@@ -6,6 +6,7 @@ apply plugin: 'maven'
 
 sourceCompatibility = 1.7
 
+
 task "init-dir" << {
     sourceSets*.java.srcDirs*.each {
         it.mkdirs()
